@@ -23,7 +23,7 @@ jobs:
         dotnet-version: 5.0.x
     - copy: ./AllHandy Backend/* ./ 
     - name: Restore dependencies
-      run: dotnet restore AllHandy Backend/*
+      run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
     - name: Test
