@@ -22,7 +22,7 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Copy Backend Solution to Root Path
-    - copy: ./AllHandy Backend/* ./ 
+      copy: ./AllHandy Backend/* ./ 
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
