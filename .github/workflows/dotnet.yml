@@ -2,9 +2,13 @@ name: .NET
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: 
+    - main
+    - develop
   pull_request:
-    branches: [ main, develop ]
+    branches:
+    - main
+    - develop
 
 jobs:
   build:
@@ -17,8 +21,9 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
+    - copy: ./AllHandy Backend/* ./ 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore AllHandy Backend/*
     - name: Build
       run: dotnet build --no-restore
     - name: Test
